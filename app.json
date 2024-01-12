@@ -15,16 +15,46 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile":"./wardrobeGoogleService-Info.plist"
     },
     "android": {
+      "package": "com.hm.wardrobe",
+      "googleServicesFile":"./wardrobe-google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "plugins":[
+      
+        "@react-native-firebase/app",
+        [
+          "expo-build-properties",
+          {
+            "ios":{
+              "useFrameworks":"static"
+            }
+          }
+        ]
+      
+    ],
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#ffffff"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cce68b69-af50-400d-85ea-646cd60c0aad"
+      }
+    }
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
+  },
+  "extra": {
+    "eas": {
+      "projectId": "cce68b69-af50-400d-85ea-646cd60c0aad"
     }
   }
 }
