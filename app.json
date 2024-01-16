@@ -26,18 +26,22 @@
         "backgroundColor": "#ffffff"
       }
     },
-    "plugins":[
-      
-        "@react-native-firebase/app",
-        [
-          "expo-build-properties",
-          {
-            "ios":{
-              "useFrameworks":"static"
-            }
+    "plugins": [
+      "@react-native-firebase/app",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
           }
-        ]
-      
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow PRODUCT_NAME) to use your location."
+        }
+      ]
     ],
     "adaptiveIcon": {
       "foregroundImage": "./assets/adaptive-icon.png",

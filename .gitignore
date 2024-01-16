@@ -34,5 +34,3 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-wardrobe-google-services.json
-wardrobeGoogleService-Info.plist
