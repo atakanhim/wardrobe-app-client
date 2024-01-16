@@ -1,6 +1,0 @@
-{
-  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
-  "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
-  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
-  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true
-}
