@@ -1,7 +1,7 @@
-import { useAuth } from "@/app/contexts/authProvider";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
+import { useAuth } from "../../contexts/authProvider";
 
 const CreateUserScreen = () => {
   const [nameSurname, setNameSurname] = useState("");

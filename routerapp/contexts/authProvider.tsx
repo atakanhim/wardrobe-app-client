@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import * as SecureStore from "expo-secure-store";
-import { GoogleSignin } from "@react-native-google-signin/google-signin";
-// import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { useRouter } from "expo-router";
+// // import { GoogleSignin } from "@react-native-google-signin/google-signin";
 const TOKEN_KEY = process.env.EXPO_PUBLIC_TOKEN_KEY ?? " ";
 const API_URL = process.env.EXPO_PUBLIC_API_URL ?? " ";
 
@@ -143,13 +143,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       refreshToken: null,
       authenticated: false,
     });
+    console.log("gule 2gule");
 
     //google ile girdiyse -
-    const isSignedIn = await GoogleSignin.isSignedIn();
-    if (isSignedIn) {
-      GoogleSignin.revokeAccess();
-      GoogleSignin.signOut();
-    }
+    // const isSignedIn = await GoogleSignin.isSignedIn();
+    // if (isSignedIn) {
+    //   GoogleSignin.revokeAccess();
+    //   GoogleSignin.signOut();
+    // }
   };
 
   return (

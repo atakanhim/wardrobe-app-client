@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
-import { useAuth } from "@/app/contexts/authProvider";
+import { useAuth } from "@/contexts/authProvider";
 
 const Settings = () => {
   const { onLogout } = useAuth();

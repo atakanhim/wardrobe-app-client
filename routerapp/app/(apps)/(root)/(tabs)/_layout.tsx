@@ -44,7 +44,12 @@ const Layout = () => {
           header: () => <CustomHeader />,
         }}
       />
-      <Tabs.Screen name="settings" />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          headerTitle: "settings",
+        }}
+      />
     </Tabs>
   );
 };

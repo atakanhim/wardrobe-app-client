@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from "@react-native-google-signin/google-signin";
-import { useAuth } from "@/app/contexts/authProvider";
+// import {
+//   GoogleSignin,
+//   GoogleSigninButton,
+//   statusCodes,
+// } from "@react-native-google-signin/google-signin";
+import { useAuth } from "@/contexts/authProvider";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
-const Login: React.FC<any> = ({ route }) => {
+const LoginScreen: React.FC<any> = ({ route }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { onLogin, onRegister, onGoogleLogin } = useAuth();
@@ -18,13 +18,17 @@ const Login: React.FC<any> = ({ route }) => {
   const router = useRouter();
   const params = useLocalSearchParams();
 
+  // useEffect(() => {
+  //   GoogleSignin.configure({
+  //     webClientId:
+  //       "692724499227-gkeac9s95q579lodovv8s2b3ihat38rp.apps.googleusercontent.com",
+  //     scopes: ["profile", "email"],
+  //     offlineAccess: false,
+  //   });
+  // }, []);
   useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        "692724499227-gkeac9s95q579lodovv8s2b3ihat38rp.apps.googleusercontent.com",
-    });
+    console.log("login icerdeyiz");
   }, []);
-
   useEffect(() => {
     if (params) {
       console.log("login mesaj = " + params.messaage);
@@ -33,31 +37,39 @@ const Login: React.FC<any> = ({ route }) => {
 
   const handleLogin = async () => {
     const result = await onLogin!(email, password);
-  };
-  const handleCreateUser = () => {
-    router.navigate("./createUser");
-  };
-
-  const handleGoogleLogin = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      console.log("q");
-      const user = await GoogleSignin.signIn();
-      console.log(user);
-
-      const result = await onGoogleLogin!(user.idToken);
-
-      if (result.Succeeded) {
-        console.log("googlelogin screen : ", result);
+    if (result) {
+      while (router.canGoBack()) {
+        // Pop from stack until one element is left
+        router.back();
       }
-
-      setUserInfo(user);
-      console.log(user);
-    } catch (e) {
-      console.log(e);
-      setError(e);
+      console.log("giris yapildi");
+      router.replace("/");
     }
   };
+  const handleCreateUser = () => {
+    router.navigate("/createUser");
+  };
+
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     await GoogleSignin.hasPlayServices();
+  //     console.log("q");
+  //     const user = await GoogleSignin.signIn();
+  //     console.log(user);
+
+  //     const result = await onGoogleLogin!(user.idToken);
+
+  //     if (result.Succeeded) {
+  //       console.log("googlelogin screen : ", result);
+  //     }
+
+  //     setUserInfo(user);
+  //     console.log(user);
+  //   } catch (e) {
+  //     console.log(e);
+  //     setError(e);
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
@@ -69,6 +81,7 @@ const Login: React.FC<any> = ({ route }) => {
       />
       <TextInput
         style={styles.input}
+        className="text-2xl"
         placeholder="Şifre"
         value={password}
         secureTextEntry
@@ -79,11 +92,11 @@ const Login: React.FC<any> = ({ route }) => {
       {params && <TextInput>--</TextInput>}
 
       <View>
-        <GoogleSigninButton
+        {/* <GoogleSigninButton
           size={GoogleSigninButton.Size.Standard}
           color={GoogleSigninButton.Color.Dark}
           onPress={handleGoogleLogin}
-        ></GoogleSigninButton>
+        ></GoogleSigninButton> */}
         <TextInput>{JSON.stringify(error?.message)}</TextInput>
       </View>
     </View>
@@ -107,4 +120,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default LoginScreen;

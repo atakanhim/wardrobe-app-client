@@ -7,21 +7,26 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const CustomHeader = () => {
+  const router = useRouter();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.rowContainer}>
         <Text style={styles.text}> Wardrobe </Text>
-        <Link href={"/(modals)/profile"} asChild>
-          <Pressable>
-            <Image
-              source={require("@/assets/images/defaulavatar.png")}
-              style={{ width: 50, height: 50 }}
-            />
-          </Pressable>
-        </Link>
+
+        <Pressable
+          onPress={() => {
+            console.log("adsa");
+            router.navigate("/profile");
+          }}
+        >
+          <Image
+            source={require("@/assets/images/defaulavatar.png")}
+            style={{ width: 50, height: 50 }}
+          />
+        </Pressable>
       </View>
     </SafeAreaView>
   );

@@ -12,17 +12,15 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier":"com.hm.wardrobe",
-      "googleServicesFile": "./wardrobeGoogleService-Info.plist"
+      "bundleIdentifier": "com.hm.wardrobe",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "package": "com.hm.wardrobe",
-      "googleServicesFile": "./wardrobe-google-services.json",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -35,7 +33,17 @@
     },
     "plugins": [
       "expo-router",
-      "@react-native-google-signin/google-signin"
+      "@react-native-google-signin/google-signin",
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
@@ -45,8 +53,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "3aa48655-0ebe-4896-87e5-729e3d839c76"
+        "projectId": "3a65ba0b-5725-4e67-9995-21fab605722b"
       }
-    }
+    },
+    "owner": "expoatakan2"
   }
 }
