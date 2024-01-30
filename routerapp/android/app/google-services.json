@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "692724499227",
+    "project_id": "wardrobeapp-dc892",
+    "storage_bucket": "wardrobeapp-dc892.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692724499227:android:b56dabb4264065450149be",
+        "android_client_info": {
+          "package_name": "com.hm.wardrobe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692724499227-l3ofi2c4j6f5cq24lhdv2bjoppog9quf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hm.wardrobe",
+            "certificate_hash": "bc1b6240ce8ad3caa446c683013c5df12aaeca94"
+          }
+        },
+        {
+          "client_id": "692724499227-gkeac9s95q579lodovv8s2b3ihat38rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnqD9jQgq2duJRAfwY6aa2PpiMdinw1kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692724499227-gkeac9s95q579lodovv8s2b3ihat38rp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "692724499227-93o9lvjpfuujdd4isdn3sankce3f0niv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hm.wardrobe"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
