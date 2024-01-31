@@ -8,6 +8,9 @@ const API_URL = process.env.EXPO_PUBLIC_API_URL ?? " ";
 
 const AuthContext = createContext<AuthProps>({});
 
+const deger = Boolean(process.env.EXPO_DEV_MODE_FOR_AUTH);
+console.log(deger);
+
 interface AuthProps {
   authState?: {
     accessToken: string | null;
