@@ -16,11 +16,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "googleServicesFile":"./wardrobeGoogleService-Info.plist"
+      "googleServicesFile": "./wardrobeGoogleService-Info.plist"
     },
     "android": {
       "package": "com.hm.wardrobe",
-      "googleServicesFile":"./wardrobe-google-services.json",
+      "googleServicesFile": "./wardrobe-google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -46,19 +46,9 @@
     "adaptiveIcon": {
       "foregroundImage": "./assets/adaptive-icon.png",
       "backgroundColor": "#ffffff"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "cce68b69-af50-400d-85ea-646cd60c0aad"
-      }
     }
   },
   "web": {
     "favicon": "./assets/favicon.png"
-  },
-  "extra": {
-    "eas": {
-      "projectId": "cce68b69-af50-400d-85ea-646cd60c0aad"
-    }
   }
 }

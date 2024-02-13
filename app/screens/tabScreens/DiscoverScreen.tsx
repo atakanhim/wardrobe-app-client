@@ -2,19 +2,8 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useAuth } from '../../contexts/AuthContext';
-type AuthStackParamList = {
-  Discover: undefined; // Diğer ekranlarınız için ek parametreler tanımlayabilirsiniz
-  // Örneğin: Home: { userId: string };
-};
-type DiscoverScreenNavigationProp = StackNavigationProp<
-  AuthStackParamList,
-  'Discover'
->;
-type Props = {
-  navigation: DiscoverScreenNavigationProp;
-};
 
-const DiscoverScreen: React.FC<Props> = ({ navigation }) => {
+const DiscoverScreen: React.FC<any> = ({ navigation }) => {
   const { onLogout } = useAuth();
 
   return (

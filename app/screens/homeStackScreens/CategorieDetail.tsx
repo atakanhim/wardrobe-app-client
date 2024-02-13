@@ -1,14 +1,13 @@
 import { RouteProp, useNavigation } from '@react-navigation/native';
 import React, { useEffect } from 'react'
 import { SafeAreaView, Text, View } from 'react-native'
-import { CategorieDetailParams, HomeStackParamList, SubCategory } from '../../../constants/types';
-type CategorieDetailRouteProp = RouteProp<HomeStackParamList, 'CategorieDetails'>;
-type Props = {
-    route: CategorieDetailRouteProp;
+import { StackNavigationProp } from '@react-navigation/stack';
 
-};
-const CategorieDetail: React.FC<Props> = ({ route }) => {
-    const { categoryAlt, categoryName } = route.params;
+import { CategorieDetailParams, HomeStackParamList, SubCategory } from '../../../constants/types';
+
+
+const CategorieDetail = ({ route }) => {
+    const { categoryAlt, categoryName }: { categoryAlt: SubCategory[], categoryName: string } = route.params;
     const navigation = useNavigation();
     useEffect(() => {
         // Örneğin, ilk alt kategoriyi başlık olarak kullanma
@@ -18,9 +17,16 @@ const CategorieDetail: React.FC<Props> = ({ route }) => {
             });
         }
     }, [categoryAlt, categoryName, navigation]);
-    console.log(categoryAlt.map(() => ({
-
-    })));
+    console.log("-------------------")
+    categoryAlt.forEach((item, index) => {
+        console.log("*********sss****************************")
+        console.log(item.subCategoryAlt)
+        console.log(item.subCategoryName)
+        console.log(item.subCategoryColor)
+        console.log(item.subCategoryId)
+        console.log("*************************************")
+    });
+    console.log("-------------- -----")
     return (
         <SafeAreaView>
             {/* Burada categoryAlt içindeki veriyi kullanabilirsiniz */}

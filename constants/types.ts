@@ -5,7 +5,10 @@ export type HomeStackParamList = {
     CategorieDetails:CategorieDetailParams; // Örneğin categoryName adında bir parametre
     // Diğer ekranlar için buraya parametre tanımlayabilirsiniz
   };
-  
+  export type CategorieDetailParams = {
+    categoryName?:string;
+    categoryAlt: SubCategory[];
+  };
   // types.ts
 
   export type SubCategory = {
@@ -23,7 +26,4 @@ export type HomeStackParamList = {
     categoryAlt: SubCategory[];
   };
   
-  export type CategorieDetailParams = {
-    categoryName?:string;
-    categoryAlt: SubCategory[];
-  };
+  
